@@ -5,12 +5,14 @@ import { UserProfile } from "./components/user/UserProfile";
 import { Login } from "./components/common/Login";
 import { Signup } from "./components/common/Signup";
 import { AgencySidebar } from "./components/layouts/AgencySidebar";
-import { AddScreen } from "./components/agency/AddScreen";
+
 import axios from "axios";
 import "./assets/adminlte.css";
 import "./assets/adminlte.min.css";
 import PrivateRoutes from "./hooks/PrivateRoutes";
 import LandingPage from "./components/common/LandingPage";
+import { AddProperty } from "./components/host/AddProperty";
+
 
 function App() {
   //axios.defaults.baseURL = "http://localhost:8000";
@@ -42,10 +44,13 @@ function App() {
 
         <Route path="" element={<PrivateRoutes />}>
           <Route path="/user" element={<UserSidebar />}>
-            <Route path="profile" element={<UserProfile />} />
+          <Route path="profile" element={<UserProfile />} />
+  
+            
           </Route>
-          <Route path="/agency" element={<AgencySidebar />}>
-            <Route path="addscreen" element={<AddScreen />} />
+          <Route path="/host" element={<AgencySidebar />}>
+            
+            <Route path="addproperty" element={<AddProperty />} />
           </Route>
         </Route>
       </Routes>

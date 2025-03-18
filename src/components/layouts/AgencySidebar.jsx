@@ -56,10 +56,10 @@ export const AgencySidebar = () => {
               data-accordion="false"
             >
               <li className="nav-item menu-open">
-                <Link to="addscreen" className="nav-link active">
+                <Link to="addproperty" className="nav-link active">
                   <i className="nav-icon bi bi-speedometer" />
                   <p>
-                    ADD SCREEN
+                    ADD Property
                     <i className="nav-arrow bi bi-chevron-right" />
                   </p>
                 </Link>
@@ -68,7 +68,7 @@ export const AgencySidebar = () => {
                     <Link to="addscreen" className="nav-link active">
                       <i className="nav-icon bi bi-speedometer" />
                       <p>
-                        VIEW MY SCREENS
+                        VIEW MY Properties
                         <i className="nav-arrow bi bi-chevron-right" />
                       </p>
                     </Link>
