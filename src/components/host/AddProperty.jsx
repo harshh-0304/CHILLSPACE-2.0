@@ -215,7 +215,7 @@ export const AddProperty = () => {
                 <input
                   type="number"
                   className="form-control"
-                  {...register("totalPrice", { required: "Price is required." })}
+                  {...register("price", { required: "Price is required." })}
                   placeholder="Enter total price as per day "
                 />
                 <p style={{ textAlign: "center", color: "red" }}>

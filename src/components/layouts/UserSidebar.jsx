@@ -56,7 +56,7 @@ export const UserSidebar = () => {
                 <a href="#" className="nav-link active">
                   <i className="nav-icon bi bi-speedometer" />
                   <p>
-                    Dashboard
+                    Home
                     <i className="nav-arrow bi bi-chevron-right" />
                   </p>
                 </a>
@@ -64,13 +64,13 @@ export const UserSidebar = () => {
                   <li className="nav-item">
                     <a href="./index.html" className="nav-link active">
                       <i className="nav-icon bi bi-circle" />
-                      <p>Dashboard v1</p>
+                      <p>Explore</p>
                     </a>
                   </li>
                   <li className="nav-item">
                     <a href="./index2.html" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
-                      <p>Dashboard v2</p>
+                      <p>My bookings</p>
                     </a>
                   </li>
                   <li className="nav-item">

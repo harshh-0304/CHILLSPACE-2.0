@@ -12,6 +12,9 @@ import "./assets/adminlte.min.css";
 import PrivateRoutes from "./hooks/PrivateRoutes";
 import LandingPage from "./components/common/LandingPage";
 import { AddProperty } from "./components/host/AddProperty";
+import { ViewMyProperty } from "./components/host/ViewMyProperty";
+import Home from "./components/user/Home";
+
 
 
 function App() {
@@ -44,15 +47,17 @@ function App() {
 
         <Route path="" element={<PrivateRoutes />}>
           <Route path="/user" element={<UserSidebar />}>
-          <Route path="profile" element={<UserProfile />} />
-  
-            
+          <Route path="profile" element={<UserProfile />} /> 
+          <Route path="home" element={<Home />} /> 
+
+          
           </Route>
           <Route path="/host" element={<AgencySidebar />}>
-            
             <Route path="addproperty" element={<AddProperty />} />
+            <Route path="viewproperty" element={<ViewMyProperty />} />
           </Route>
         </Route>
+        
       </Routes>
     </div>
   );
