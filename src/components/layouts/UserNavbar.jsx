@@ -24,7 +24,7 @@ export const UserNavbar = ({ toggleSidebar }) => {
             </a>
           </li>
           <li className="nav-item d-none d-md-block">
-            <a href="#" className="nav-link">
+            <a href="/user/home" className="nav-link">
               Home
             </a>
           </li>

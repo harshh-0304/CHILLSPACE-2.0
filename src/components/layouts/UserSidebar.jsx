@@ -53,7 +53,7 @@ export const UserSidebar = () => {
               data-accordion="false"
             >
               <li className="nav-item menu-open">
-                <a href="#" className="nav-link active">
+                <a href="/user/home" className="nav-link active">
                   <i className="nav-icon bi bi-speedometer" />
                   <p>
                     Home

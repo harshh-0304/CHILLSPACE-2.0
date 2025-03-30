@@ -65,16 +65,18 @@
 
 // export default Home;
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Grid, Container, Typography, Card, CardMedia, CardContent } from "@mui/material";
 
 const Home = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("/property/getallproperties") // Fetch ALL properties (not user-specific)
+      .get("/property/getallproperties")
       .then((res) => {
         console.log("API Response:", res.data);
         setProperties(Array.isArray(res.data.data) ? res.data.data : []);
@@ -95,11 +97,14 @@ const Home = () => {
         <Grid container spacing={3}>
           {properties.map((property) => (
             <Grid item xs={12} sm={6} md={4} key={property._id}>
-              <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+              <Card
+                sx={{ maxWidth: 345, boxShadow: 3, cursor: "pointer" }}
+                onClick={() => navigate(`/property/${property._id}`)} // Navigate on click
+              >
                 <CardMedia
                   component="img"
                   height="200"
-                  image={property.propertyURL || "/default-placeholder.jpg"} // Fixed image field
+                  image={property.propertyURL || "/default-placeholder.jpg"}
                   alt={property.title || "Property Image"}
                 />
                 <CardContent>

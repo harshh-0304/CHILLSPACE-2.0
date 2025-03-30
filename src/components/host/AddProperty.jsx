@@ -75,9 +75,14 @@ export const AddProperty = () => {
     selectedAmenities.forEach((amenity) =>
       formData.append("amenities", amenity)
     );
-    formData.append("totalPrice", data.totalPrice);
+    formData.append("totalPrice", String(data.price));
     formData.append("roomType", data.roomType);
     formData.append("availableRooms", data.availableRooms);
+      // 🔍 Debug FormData before sending
+  console.log("🔍 FormData before sending:");
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}:`, value);
+  }
 
     try {
       const res = await axios.post("/property/addWithFile", formData);
@@ -86,7 +91,7 @@ export const AddProperty = () => {
         console.log(res.data);
         toast.success("Property added Successfully !!", {
           position: "top-center",
-          autoClose: 1300,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

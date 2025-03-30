@@ -19,8 +19,8 @@ export const Login = () => {
 
         if (res.data.data.roleId.name === "USER") {
           navigate("/user");
-        } else if (res.data.data.roleId.name === "Agency") {
-          navigate("/agency");
+        } else if (res.data.data.roleId.name === "HOST") {
+          navigate("/host");
         }
       }
     } catch (error) {

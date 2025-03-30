@@ -10,9 +10,9 @@ export const Signup = () => {
 
   const submitHandler = async (data) => {
     try {
-      data.roleId = "67ce68bac39f080f236ec78b";//USER NI
-      // data.roleId = "67ce68dcc39f080f236ec78d";//ADMIN NI
-      const res = await axios.post("/user", data);
+      data.roleId === "USER" ? "67ce68bac39f080f236ec78b" : "67dcde20679a2b7b8a8f8d22" ; 
+       const res = await axios.post("/user", data);
+console.log(data)
 
       if (res.status === 201) {
         alert("User created successfully");
@@ -53,6 +53,25 @@ export const Signup = () => {
           <div className="form-group">
             <label htmlFor="age">Age</label>
             <input type="number" id="age" {...register("age")} placeholder="Enter age" />
+          </div>
+          <div className="form-group">
+          <div>
+            
+            <select id="role" {...register("roleId" )}>
+              <option>
+                select role
+              </option>
+              <option value="ADMIN">
+admin
+              </option>
+              <option value="USER">
+user
+              </option> <option value="HOST">
+host
+              </option>
+            </select>
+            
+          </div>
           </div>
           <button type="submit" className="signup-btn">Sign Up</button>
         </form>

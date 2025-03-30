@@ -5,6 +5,7 @@ import { UserProfile } from "./components/user/UserProfile";
 import { Login } from "./components/common/Login";
 import { Signup } from "./components/common/Signup";
 import { AgencySidebar } from "./components/layouts/AgencySidebar";
+import PropertyDetail from "./components/user/PropertyDetail";
 
 import axios from "axios";
 import "./assets/adminlte.css";
@@ -49,6 +50,7 @@ function App() {
           <Route path="/user" element={<UserSidebar />}>
           <Route path="profile" element={<UserProfile />} /> 
           <Route path="home" element={<Home />} /> 
+        
 
           
           </Route>
@@ -57,7 +59,7 @@ function App() {
             <Route path="viewproperty" element={<ViewMyProperty />} />
           </Route>
         </Route>
-        
+        <Route path="/property/:id" element={<PropertyDetail />} />
       </Routes>
     </div>
   );
